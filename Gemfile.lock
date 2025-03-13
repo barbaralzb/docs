@@ -302,7 +302,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  jekyll (~> 3.9.0)
+  jekyll (~> 3.9.5)
   jekyll-toc
 
 BUNDLED WITH
