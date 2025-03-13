@@ -8,3 +8,5 @@ gem "github-pages", group: :jekyll_plugins
 
 # Plugin para generar tablas de contenido (opcional)
 gem "jekyll-toc", group: :jekyll_plugins
+
+gem "csv"  # <-- Añade esta línea
