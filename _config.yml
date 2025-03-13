@@ -1,11 +1,8 @@
-remote_theme: pages-themes/minimal@v0.2.0
+title: Mi Documentación
+theme: jekyll-theme-primer
+collections:
+  docs:
+    output: true
+    permalink: /:path/
 plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
-
-
-title: Docs
-description: Docs
-repository: barbaralzb/docs
-
-show_downloads: true
-google_analytics: true
+  - jekyll-remote-theme

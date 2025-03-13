@@ -1,0 +1,7 @@
+<nav>
+    <h3>Documentación</h3>
+    {% assign docs = site.docs | sort: "order" %}
+    {% for doc in docs %}
+      <a href="{{ doc.url | relative_url }}">{{ doc.title }}</a>
+    {% endfor %}
+  </nav>

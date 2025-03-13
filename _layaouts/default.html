@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.scss' | relative_url }}">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar izquierda -->
+    <aside class="sidebar">
+      {% include sidebar.html %}
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="content">
+      {{ content }}
+    </main>
+
+    <!-- Tabla de contenido derecha -->
+    <aside class="toc">
+      {% include toc.html %}
+    </aside>
+  </div>
+
+  <!-- Script para generar TOC -->
+  <script src="{{ '/assets/js/toc.js' | relative_url }}"></script>
+</body>
+</html>
