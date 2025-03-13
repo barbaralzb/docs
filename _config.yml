@@ -6,3 +6,4 @@ collections:
     permalink: /:path/
 plugins:
   - jekyll-remote-theme
+repository: barbaralzb/docs
