@@ -5,6 +5,7 @@ plugins:
 
 title: Docs
 description: Docs
+repository: barbaralzb/docs
 
 show_downloads: true
 google_analytics: true
