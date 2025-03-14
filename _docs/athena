@@ -1,0 +1,27 @@
+# Utilisation des fichiers CSV dans Athena pour Truncate et Ajouter des Données
+
+Dans **Amazon Athena**, la gestion des données dans des tables basées sur **Amazon S3** se fait par le chargement de fichiers CSV. Selon l'opération souhaitée, il est important de suivre une convention spécifique pour les noms de fichiers.
+
+## 1. Tronquer une Table dans Athena
+
+Pour supprimer toutes les données d'une table dans **Athena**, il n'existe pas de commande `TRUNCATE TABLE` comme dans les bases de données traditionnelles. À la place, il faut **écraser** les données existantes en téléchargeant un nouveau fichier CSV avec **le même nom** que l'ancien fichier dans l'emplacement de stockage **Amazon S3**.
+
+### Étapes pour tronquer :
+1. Téléchargez un nouveau fichier CSV vide ou contenant les données souhaitées.
+2. Assurez-vous que le nouveau fichier porte **exactement le même nom** que l'ancien fichier.
+3. Athena reconnaîtra le nouveau fichier et remplacera les anciennes données par les nouvelles.
+
+## 2. Ajouter de Nouvelles Lignes à la Table
+
+Si l'objectif est **d'ajouter de nouvelles données** sans supprimer celles existantes, il faut charger un fichier avec un **nom différent** de celui des fichiers existants dans le même emplacement de **Amazon S3**.
+
+### Étapes pour ajouter des données :
+1. Créez un nouveau fichier CSV contenant les données supplémentaires.
+2. Téléchargez le fichier dans l'emplacement de stockage **Amazon S3**.
+3. Athena détectera automatiquement le nouveau fichier et ajoutera ses données à la table sans supprimer les données existantes.
+
+## Considérations
+- Il est recommandé d'utiliser des **partitions** dans Athena pour améliorer l'efficacité des requêtes et éviter le chargement inutile de fichiers.
+- Si vous devez supprimer des données spécifiques sans écraser toute la table, vous pouvez utiliser des stratégies telles que **la réécriture des partitions** ou l'utilisation de **tables temporaires**.
+
+En suivant ces pratiques, vous pouvez gérer efficacement la manipulation des données dans Athena en utilisant des fichiers CSV stockés dans **Amazon S3**.
